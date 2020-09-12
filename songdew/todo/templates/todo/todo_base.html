@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="nav navbar" role="navigation" id="navbar" style="background-color:#130717; width: 100%; font-size: 20px;">
+    <li>
+      <a href="{% url 'todo:create' %}" class="nav navbar-nav navbar-left" style="margin-left: 19%; background-color:#130717; color:#eddaf4 ">
+        <span class="glyphicon glyphicon-plus"></span> Create
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'todo:for_user' username=user.username %}" class="nav navbar-nav navbar-left" style="color:#eddaf4; margin-left: 3%; background-color:#130717;">
+        <span class="glyphicon glyphicon-th-list"></span> View All
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'logout' %}" class="nav navbar-nav navbar-right" style="margin-right: 10%; background-color:#130717; color:#eddaf4">
+        <span class="glyphicon glyphicon-off"></span> Logout
+      </a>
+    </li>
+  </div>
+  <div class="container todo-container">
+    {% block todo_list %}
+
+    {% endblock %}
+  </div>
+{% endblock %}

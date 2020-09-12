@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container">
+    <h2>Welcome to the ToDO List</h2>Please Login:
+    <a href="{% url 'admin:index' %}" class="btn btn-info">Admin</a>
+    <a href="{% url 'accounts:login' %}" class="btn btn-info">User</a>
+  </div>
+{% endblock %}

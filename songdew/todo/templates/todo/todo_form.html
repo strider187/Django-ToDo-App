@@ -1,0 +1,13 @@
+{% extends 'todo/todo_base.html' %}
+{% load bootstrap4 %}
+
+{% block todo_list %}
+  <!-- <h3 style="margin-left:90%;"><button type="button" class="btn btn-danger"><a href="{% url 'logout' %}" style="color: black">Logout</a></button> </h3> -->
+  <h4>Create a new Todo Task.</h4>
+  <form id="todoform" action={% url 'todo:create' %} method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" class="btn btn-success btn-lg" value="Create!">
+  </form>
+
+{% endblock %}

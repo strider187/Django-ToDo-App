@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+  <div class="container">
+    <h1>Login as a user</h1>
+    <form method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <input type="submit" class="btn btn-primary" value='Login!'>
+    </form>
+  </div>
+  <div class="container">
+    <h4>Having trouble Loging In? Contact the Admin Panel</h4>
+    <h4>To Login as an Admin <a href="#">Click Here</a></h4>
+  </div>
+{% endblock %}
